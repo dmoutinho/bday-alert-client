@@ -88,11 +88,11 @@
 
 		// ================ CONST - INIT ================ 
 	
-		//var CONST_RESOURCE = "http://localhost:9080/bday";
-		//var CONST_RESOURCE_ID = "http://localhost:9080/bday";
+		var CONST_RESOURCE = "https://bday-alert-api.herokuapp.com";
+		var CONST_RESOURCE_ID = "https://bday-alert-api.herokuapp.com";
 	
-		var CONST_RESOURCE = "http://localhost:8080/bday";
-		var CONST_RESOURCE_ID = "http://localhost:8081/bday";
+		//var CONST_RESOURCE = "http://localhost:8080/bday";
+		//var CONST_RESOURCE_ID = "http://localhost:8081/bday";
 
 		// ================ CONST - END ================  
 		
@@ -235,10 +235,13 @@
 		
 		function ajax( url, type, param, success, error, complete ) {
 			console.log( "ajax init "+url );
+			console.log( param );			
 			$.ajax({
 				url: url,
 				type: type,
 				dataType: "json",
+				contentType: "application/json", 
+				data: param, 
 				crossDomain: true,
 				success: success,		
 				error: error,		
